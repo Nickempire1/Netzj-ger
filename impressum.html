@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>NetzjägerGMBH | Impressum</title>
+  <meta name="description" content="Die NetzjägerGMBH ist ihr vertraulicher Volleyballverein.">
+  <meta name="keywords" content="Volleyball, Meiringen, TVMeiringen, GMBH, Volley">
+  <title>Impressum – Quickblech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hero-bg"></div>
+  <header>
+    <h1><a href="index.html" class="logo-link">NetzjägerGMBH</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="team.html">Unser Team</a></li>
+        <li><a href="fotos.html">Fotos</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Impressum</h2>
+      <p><strong>Verantwortlich für den Inhalt:</strong><br>
+      Nick Abplanalp<br>
+      Aarmattenweg 6<br>
+      3860 Meiringen<br>
+      Schweiz</p>
+
+      <p><strong>Kontakt:</strong><br>
+      Telefon: 079 939 64 61<br>
+      E-Mail: netzjäger@hotmail.com</p>
+
+      <p>Der NetzjägerGMBH ist ein privater Verein und ist zurzeit nirgendwo eingetragen. Alle Inhalte dieser Website dienen ausschliesslich Informationszwecken.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2026 NetzjägerGMBH – Alle Rechte vorbehalten</p>
+    
+<p>
+  <a href="impressum.html">Impressum</a> | 
+  <a href="datenschutz.html">Datenschutzerklärung</a>
+</p>
+
+  </footer>
+<div id="cookie-banner" style="display:none;">
+  <p>Diese Website verwendet Cookies, um zukünftige Funktionen bereitzustellen – darunter das Zählen von App-Downloads und das Speichern von Einstellungen.</p>
+  <button id="accept-cookies">Akzeptieren</button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var banner = document.getElementById("cookie-banner");
+    var acceptBtn = document.getElementById("accept-cookies");
+
+    if (!localStorage.getItem("cookiesAccepted")) {
+        banner.style.display = "block";
+    }
+
+    acceptBtn.addEventListener("click", function() {
+        localStorage.setItem("cookiesAccepted", "true");
+        banner.style.display = "none";
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>NetzjägerGMBH | Fotos</title>
+  <meta name="description" content="Die NetzjägerGMBH ist ihr vertraulicher Volleyballverein.">
+  <meta name="keywords" content="Volleyball, Meiringen, TVMeiringen, GMBH, Volley">
+  <title>Netzjäger – Startseite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hero-bg"></div>
+  <header>
+    <h1><a href="index.html" class="logo-link">NetzjägerGMBH</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="team.html">Unser Team</a></li>
+        <li><a href="fotos.html">Fotos</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Unsere Fotos.</h2>
+      <div id="foto-grid" class="foto-grid"></div>
+    </section>
+
+    <section>
+      <h2>Support & Feedback</h2>
+      <p>Bei Fragen zu den Fotos oder Turnieren von den Fotos kannst du dich jederzeit an uns wenden. Wir freuen uns auch positive Rückmeldungen.</p>
+      <p><a href="kontakt.html">Zum Kontaktformular</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 NetzjägerGMBH – Alle Rechte vorbehalten</p>
+
+<p>
+  <a href="impressum.html">Impressum</a> | 
+  <a href="datenschutz.html">Datenschutzerklärung</a>
+</p>
+
+  </footer>
+<div id="cookie-banner" style="display:none;">
+  <p>Diese Website verwendet Cookies, um zukünftige Funktionen bereitzustellen – darunter das Zählen von App-Downloads und das Speichern von Einstellungen.</p>
+  <button id="accept-cookies">Akzeptieren</button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var banner = document.getElementById("cookie-banner");
+    var acceptBtn = document.getElementById("accept-cookies");
+
+    if (!localStorage.getItem("cookiesAccepted")) {
+        banner.style.display = "block";
+    }
+
+    acceptBtn.addEventListener("click", function() {
+        localStorage.setItem("cookiesAccepted", "true");
+        banner.style.display = "none";
+    });
+});
+</script>
+
+
+<script>
+    const fotos = [
+        { src: "Images/turnier1.jpg", alt: "Turnier Meiringen 2025" },
+        { src: "Images/training1.jpg", alt: "Training Donnerstag" },
+        { src: "Images/teamfoto1.jpg", alt: "Teamfoto NetzjägerGMBH" }
+        // Hier einfach neue Objekte ergänzen
+        // { src: "Images/neuesbild.jpg", alt: "Beschreibung" },
+    ];
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const grid = document.getElementById("foto-grid");
+        if (!grid) return;
+
+        fotos.forEach(foto => {
+            const img = document.createElement("img");
+            img.src = foto.src;
+            img.alt = foto.alt;
+            grid.appendChild(img);
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

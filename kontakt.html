@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>NetzjägerGMBH | Kontakt</title>
+  <meta name="description" content="Die NetzjägerGMBH ist ihr vertraulicher Volleyballverein.">
+  <meta name="keywords" content="Volleyball, Meiringen, TVMeiringen, GMBH, Volley">
+  <title>Netzjäger – Startseite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hero-bg"></div>
+  <header>
+    <h1><a href="index.html" class="logo-link">NetzjägerGMBH</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="team.html">Unser Team</a></li>
+        <li><a href="fotos.html">Fotos</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Kontakt</h2>
+      <p>Du hast Fragen, Anregungen oder möchtest mit uns in Kontakt treten? Wir freuen uns über deine Nachricht!</p>
+
+      <div class="kontaktbox">
+        <p><strong>📞 Telefon:</strong> 079 939 64 61</p>
+        <p><strong>📧 E-Mail:</strong> netzjäger@hotmail.com</p>
+        <p><strong>📍 Adresse:</strong> Turnhalle Meiringen</p>
+        <p><strong>🕒 Trainingszeit:</strong> Donnerstag 20:15 - 21.45</p>
+        <p><strong>ℹ️ Hinweis:</strong> Bitte kontaktiere uns telefonisch oder per E-Mail. Persönliche Besuche nur nach Vereinbarung.</p>
+      </div>
+    </section>
+
+    <section>
+      <section id="kontaktformular">
+  <h2>Kontaktformular</h2>
+  <form action="https://formspree.io/f/xwpqqrqj" method="POST">
+    <label for="name">Name *</label>
+    <input type="text" id="name" name="name" required placeholder="Dein Name">
+
+    <label for="email">E-Mail-Adresse *</label>
+    <input type="email" id="email" name="email" required placeholder="deine@email.ch">
+
+    <label for="message">Nachricht *</label>
+    <textarea id="message" name="message" rows="5" required placeholder="Deine Nachricht"></textarea>
+
+    <button type="submit">Absenden</button>
+  </form>
+  <p id="form-status" style="margin-top:10px;"></p>
+</section>
+
+<script>
+function validateForm() {
+  var name = document.getElementById("name");
+  var email = document.getElementById("email");
+  var message = document.getElementById("message");
+  var status = document.getElementById("form-status");
+
+  if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+    status.textContent = "Bitte fülle alle Pflichtfelder aus.";
+    status.style.color = "red";
+    return false;
+  }
+
+  var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emailPattern.test(email.value)) {
+    status.textContent = "Bitte gib eine gültige E-Mail-Adresse ein.";
+    status.style.color = "red";
+    return false;
+  }
+
+  status.textContent = "Vielen Dank! Deine Nachricht wurde (simuliert) versendet.";
+  status.style.color = "green";
+  return false; // Simuliert das Absenden ohne Backend
+}
+</script>
+
+      <p>Über das Kontaktformular kannst du uns direkt Kontaktieren. Bitte schaue, dass deine E-Mail Adresse korrekt ist. Wir werden sie, sobald wir das Mail sehen, direkt auf die von ihnen angegebene E-Mail Adresse Kontaktieren.</p>
+    </section>
+
+    <section>
+      <h2>So findest du uns</h2>
+      <p>Unsere Turnhalle liegt im Herzen des Berner Oberlands. Wenn du uns besuchen möchtest, findest du uns in Meiringen – gut erreichbar mit dem Auto oder den öffentlichen Verkehrsmitteln.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 NetzjägerGMBH – Wir freuen uns auf deine Nachricht!</p>
+
+<p>
+  <a href="impressum.html">Impressum</a> | 
+  <a href="datenschutz.html">Datenschutzerklärung</a>
+</p>
+
+  </footer>
+<div id="cookie-banner" style="display:none;">
+  <p>Diese Website verwendet Cookies, um zukünftige Funktionen bereitzustellen – darunter das Zählen von App-Downloads und das Speichern von Einstellungen.</p>
+  <button id="accept-cookies">Akzeptieren</button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var banner = document.getElementById("cookie-banner");
+    var acceptBtn = document.getElementById("accept-cookies");
+
+    if (!localStorage.getItem("cookiesAccepted")) {
+        banner.style.display = "block";
+    }
+
+    acceptBtn.addEventListener("click", function() {
+        localStorage.setItem("cookiesAccepted", "true");
+        banner.style.display = "none";
+    });
+});
+</script>
+
+</body>
+</html>
