@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>NetzjägerGMBH | Team</title>
+  <meta name="description" content="Die NetzjägerGMBH ist ihr vertraulicher Volleyballverein.">
+  <meta name="keywords" content="Volleyball, Meiringen, TVMeiringen, GMBH, Volley">
+  <title>Netzjäger – Startseite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hero-bg"></div>
+  <header>
+    <h1><a href="index.html" class="logo-link">NetzjägerGMBH</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="team.html">Unser Team</a></li>
+        <li><a href="fotos.html">Fotos</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Unser Team</h2>
+      <img src="Images/team.jpg" alt="Team" width="900">
+    </section>
+
+    <section>
+      <div class="profil">
+        <img src="Images/nick2.jpg" alt="Nick Abplanalp" width="300">
+        <div class="text">
+          <h3>Nick Abplanalp</h3>
+          <p>17</p>
+          <p>Zuspieler</p>
+          <p>Äifach der Bescht</p>
+          <p>Lehre als Informatiker Platformentwicklung bei der KWO</p>
+        </div>
+      </div>
+    </section>
+
+    
+  </main>
+
+  <footer>
+    <p>&copy; 2026 NetzjägerGMBH – Gemeinsam stark auf dem Feld</p>
+
+<p>
+  <a href="impressum.html">Impressum</a> | 
+  <a href="datenschutz.html">Datenschutzerklärung</a>
+</p>
+
+  </footer>
+<div id="cookie-banner" style="display:none;">
+  <p>Diese Website verwendet Cookies, um zukünftige Funktionen bereitzustellen – darunter das Zählen von App-Downloads und das Speichern von Einstellungen.</p>
+  <button id="accept-cookies">Akzeptieren</button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var banner = document.getElementById("cookie-banner");
+    var acceptBtn = document.getElementById("accept-cookies");
+
+    if (!localStorage.getItem("cookiesAccepted")) {
+        banner.style.display = "block";
+    }
+
+    acceptBtn.addEventListener("click", function() {
+        localStorage.setItem("cookiesAccepted", "true");
+        banner.style.display = "none";
+    });
+});
+</script>
+
+
+</body>
+</html>
