@@ -1,0 +1,268 @@
+/* =========================
+   Design-Variablen & Reset
+   ========================= */
+:root{
+  --bg: #0f1222;
+  --bg-soft: #171a2c;
+  --panel: #1f2440;
+  --text: #e9ecf1;
+  --muted: #b9c0d0;
+  --accent: #7c5cff;     /* Akzentfarbe (anpassbar) */
+  --accent-2: #4ad4ff;   /* Link-/Zweitfarbe */
+  --ok: #59d685;
+  --radius: 14px;
+  --shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  line-height: 1.6;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(124,92,255,.15), transparent 60%),
+    radial-gradient(800px 500px at 90% -10%, rgba(74,212,255,.12), transparent 60%),
+    var(--bg);
+}
+
+/* =========================
+   Header & Navigation
+   ========================= */
+header{
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(124,92,255,0.18), rgba(124,92,255,0) 60%);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  padding: 28px 16px 18px;
+  text-align: center;
+  margin-top: 0; /* überschreibt altes -100vh */
+}
+
+header h1{
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  letter-spacing: .2px;
+}
+
+.logo-link{
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+}
+.logo-link:hover{ color: var(--accent); }
+
+/* Navigation */
+nav ul{
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: inline-flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav ul li a{
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: background .2s ease, color .2s ease, transform .06s ease;
+}
+nav ul li a:hover{
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   HERO (nutzt dein vorhandenes <div class="hero-bg">)
+   ========================= */
+.hero-bg{
+  position: relative;
+  height: 10px;                /* statt 100vh -> kompakter Hero */
+  background:
+    radial-gradient(600px 300px at 20% 10%, rgba(124,92,255,.25), transparent 60%),
+    radial-gradient(700px 350px at 80% 0%, rgba(74,212,255,.18), transparent 60%),
+    linear-gradient(180deg, rgba(124,92,255,0.10), rgba(124,92,255,0) 60%);
+  filter: none;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* weicher Abschluss unten */
+.hero-bg::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0 0;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(15,18,34,0), var(--bg));
+}
+
+/* =========================
+   Main, Sektionen & Karten
+   ========================= */
+main{
+  max-width: 1100px;
+  margin: 24px auto 40px;
+  padding: 0 16px;
+  position: relative;
+  z-index: 2;
+}
+
+section{
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding: 22px;
+  margin: 18px 0;
+  box-shadow: var(--shadow);
+}
+
+h2{
+  color: var(--text);
+  margin-top: 0;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+}
+
+p, li{ color: var(--text); }
+ul{ padding-left: 18px; }
+
+.code{
+  background: #0b0e1a;
+  color: #e6eaff;
+  padding: 12px;
+  border-radius: 10px;
+  overflow-x: auto;
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+/* Kontaktbox (Kompatibel mit deiner kontakt.html) */
+.kontaktbox{
+  background: #1a203a;
+  border: 1px solid rgba(255,255,255,.08);
+  border-left: 4px solid var(--accent);
+  color: var(--text);
+  padding: 16px;
+  border-radius: 10px;
+  margin-top: 12px;
+}
+
+/* Links im Content */
+a{ color: var(--accent-2); }
+a:hover{ text-decoration: underline; }
+
+/* =========================
+   Team-Profile (Kompatibel zu .profil + <img> + .text)
+   ========================= */
+.profil{
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: #121735;
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.profil img{
+  width: 220px;
+  max-width: 40%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+}
+
+.profil .text h3{
+  margin: 4px 0 6px;
+  font-size: 1.2rem;
+}
+.profil .text p{
+  margin: 4px 0;
+  color: var(--muted);
+}
+
+/* =========================
+   Buttons (generisch)
+   ========================= */
+.button, button, input[type="submit"]{
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+  color: #0e1020;
+  background: linear-gradient(180deg, var(--accent), #5a40e6);
+  box-shadow: 0 10px 24px rgba(124,92,255,.35);
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+}
+.button:hover, button:hover, input[type="submit"]:hover{
+  transform: translateY(-1px);
+}
+
+/* =========================
+   Footer
+   ========================= */
+footer{
+  border-top: 1px solid rgba(255,255,255,.08);
+  background: #0c0f1d;
+  color: var(--muted);
+  text-align: center;
+  padding: 20px 12px 34px;
+  margin-top: 28px;
+  font-size: .95rem;
+}
+footer a{
+  color: var(--accent-2);
+  text-decoration: none;
+  margin: 0 8px;
+}
+footer a:hover{ text-decoration: underline; }
+
+/* =========================
+   Cookie-Banner (Kompatibel zu #cookie-banner)
+   ========================= */
+#cookie-banner{
+  display: none; /* wird durch JS eingeblendet */
+  position: fixed; inset: auto 0 0 0;
+  background: #121735;
+  color: var(--text);
+  padding: 14px 16px;
+  text-align: center;
+  font-size: .95rem;
+  z-index: 1000;
+  border-top: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 -12px 24px rgba(0,0,0,.35);
+}
+#cookie-banner button{
+  margin-left: 12px;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 760px){
+  header{ padding: 22px 12px 12px; }
+  .profil{ flex-direction: column; }
+  .profil img{ width: 100%; max-width: 100%; }
+}
+/* =========================
+   Galerie
+   ========================= */
+
+.foto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.foto-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 6px 16px rgba(0,0,0,.35);
+}
